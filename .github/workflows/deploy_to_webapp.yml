@@ -10,9 +10,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     
-    - name:
-      run: |
-        dotnet publish
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+    
+    - run: dotnet publish
 
     # Deploy the app to App Service (https://github.com/Azure/webapps-deploy)
     - uses: azure/webapps-deploy@v1
