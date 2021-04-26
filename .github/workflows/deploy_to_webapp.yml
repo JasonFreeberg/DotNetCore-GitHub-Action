@@ -13,12 +13,5 @@ jobs:
     - name: Set up .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.x'
-    
-    - run: dotnet publish
-
-    # Deploy the app to App Service (https://github.com/Azure/webapps-deploy)
-    - uses: azure/webapps-deploy@v1
-      with:
-        app-name: freebergdotnetcore
-        publish-profile: ${{ secrets.PUBLISH_PROFILE }}
+        dotnet-version: '6.0'
+  
